@@ -1,0 +1,102 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+section{
+    width: 100%;height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background: #ffff;  /* fallback for old browsers */
+ 
+}
+.fondoa{ 
+    background-image:url('fondo.png');
+    background-size:60%;
+    background-position:100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+h1{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1b1b1b;
+    position: absolute;
+    top: 35%; left: 20%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+}
+h2{
+    color: #1b1b1b;
+    position: absolute;
+    top: 42%; left: 24%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+}
+.hamburgesa{
+    position: absolute;
+    top: 20px;left: 20px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.hamburgesa .line{
+    display: block;
+    width: 32px;height: 2px;
+    background-color: #323232;
+    transition: all 0.5s;
+}
+.hamburgesa .line2{margin: 8px 0 }
+
+.sidebar{
+    position:fixed;
+    top: 0; left:0;
+    width: 17%;height:100%;
+    transform: translateX(-100%);
+    background-color: #323232;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: 9998;
+}
+.sidebar-items{list-style: none;}
+
+.sidebar .item{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px 10px 30px;
+    font-size: 25px;
+    color: #eee;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.sidebar .item:hover {
+    background-color: #eee;
+    color: #323232;
+    transform: translateY(-10px);
+}
+.sidebar .item:not(:last-child){
+    margin-bottom: 40px;
+}
+.hamburgesa.clicked{
+    left:calc(17% - 60px);
+}
+.hamburgesa.clicked .line{
+    background-color: #eee;
+}
+.hamburgesa.clicked .line1{
+    transform: translateY(10px) rotate(-135deg);
+}
+.hamburgesa.clicked .line2{
+    transform: rotate(135deg);
+    opacity: 0;
+}
+.hamburgesa.clicked .line3{
+    transform: translateY(-10px) rotate(135deg);
+}
+.sidebar.show{
+    transform: translateX(0);
+    opacity: 1;
+}
